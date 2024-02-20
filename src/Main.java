@@ -32,7 +32,7 @@ public class Main {
         nyliste.addMovie(title, director, yearCreated, isInColor, lengthInMinutes, genre);
 
         Movie[] movieList = nyliste.getMovieList();
-        System.out.println(movieList[0].getTitle() + " er blevet tilføjet til listen");
+        System.out.println(movieList[0].getTitle() + " er blevet tilføjet til listen.");
 
     }
 }
