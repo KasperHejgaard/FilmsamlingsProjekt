@@ -1,18 +1,18 @@
-public class MovieCollection {
+import java.util.ArrayList;
 
-    private Movie[] movieList;
-    int count = 0;
+public class MovieCollection {
+    ArrayList<Movie> movieList;
 
     public MovieCollection() {
-        this.movieList = new Movie[5];
+        movieList = new ArrayList<>();
+        //movieList.add()
     }
 
     public void addMovie(String title, String director, int yearCreated, boolean isInColor, int lengthInMinutes, String genre) {
-        movieList[count++] = new Movie(title, director, yearCreated, isInColor, lengthInMinutes, genre);
-    }
+        movieList.add(new Movie(title, director, yearCreated, isInColor, lengthInMinutes, genre));
 
-    public Movie[] getMovieList() {
-        return movieList;
+        System.out.println("Titlen på filmen: " + movieList.get(0).getTitle());
+        System.out.println("Instrueret af " + movieList.get(0).getDirector());
+        System.out.println(" ");
     }
-
 }

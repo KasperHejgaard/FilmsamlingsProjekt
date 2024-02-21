@@ -4,12 +4,12 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        MovieCollection nyliste = new MovieCollection();
+        Controller nyliste = new Controller();
         int SENTINEL = 2;
 
         int opretEnFilm = 0;
+        System.out.println("Velkommen til min filmsamling!");
         while (!(opretEnFilm == SENTINEL)) {
-            System.out.println("Velkommen til min filmsamling!");
             System.out.println("1. Opret en film");
             System.out.println("2. Afslut");
             opretEnFilm = input.nextInt();
@@ -41,8 +41,8 @@ public class Main {
 
                 nyliste.addMovie(title, director, yearCreated, isInColor, lengthInMinutes, genre);
 
-                Movie[] movieList = nyliste.getMovieList();
-                System.out.println(movieList[0].getTitle() + " er blevet tilføjet til listen.");
+                // Movie[] movieList = nyliste.getMovieList();
+                //System.out.println(movieList[0].getTitle() + " er blevet tilføjet til listen.");
             } else {
                 System.out.println("Du har afsluttet programmet.");
             }
