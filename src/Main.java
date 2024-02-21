@@ -5,34 +5,47 @@ public class Main {
         Scanner input = new Scanner(System.in);
 
         MovieCollection nyliste = new MovieCollection();
-        //titel
-        System.out.println("Hvad er titlen på filem");
-        String title = input.nextLine();
+        int SENTINEL = 2;
 
-        //director
-        System.out.println("Hvem er director på filmen?");
-        String director = input.nextLine();
+        int opretEnFilm = 0;
+        while (!(opretEnFilm == SENTINEL)) {
+            System.out.println("Velkommen til min filmsamling!");
+            System.out.println("1. Opret en film");
+            System.out.println("2. Afslut");
+            opretEnFilm = input.nextInt();
+            if (opretEnFilm == 1) {
+                input.nextLine();
+                //titel
+                System.out.println("Hvad er titlen på filem");
+                String title = input.nextLine();
 
-        //yearCreated
-        System.out.println("Hvilket år udkom filmen?");
-        int yearCreated = input.nextInt();
+                //director
+                System.out.println("Hvem er director på filmen?");
+                String director = input.nextLine();
 
-        //isInColor
-        System.out.println("Er filmen på farver?");
-        boolean isInColor = input.nextBoolean();
+                //yearCreated
+                System.out.println("Hvilket år udkom filmen?");
+                int yearCreated = input.nextInt();
 
-        //lengthInMinutes
-        System.out.println("Hvor lang er filmen i minutter?");
-        int lengthInMinutes = input.nextInt();
+                //isInColor
+                System.out.println("Er filmen på farver?");
+                boolean isInColor = input.nextBoolean();
 
-        //Genre
-        System.out.println("Hvilken genre er filmen?");
-        String genre = input.next();
+                //lengthInMinutes
+                System.out.println("Hvor lang er filmen i minutter?");
+                int lengthInMinutes = input.nextInt();
 
-        nyliste.addMovie(title, director, yearCreated, isInColor, lengthInMinutes, genre);
+                //Genre
+                System.out.println("Hvilken genre er filmen?");
+                String genre = input.next();
 
-        Movie[] movieList = nyliste.getMovieList();
-        System.out.println(movieList[0].getTitle() + " er blevet tilføjet til listen.");
+                nyliste.addMovie(title, director, yearCreated, isInColor, lengthInMinutes, genre);
 
+                Movie[] movieList = nyliste.getMovieList();
+                System.out.println(movieList[0].getTitle() + " er blevet tilføjet til listen.");
+            } else {
+                System.out.println("Du har afsluttet programmet.");
+            }
+        }
     }
 }
