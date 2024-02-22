@@ -12,4 +12,14 @@ public class Controller {
         movieCollection.addMovie(title, director, yearCreated, isInColor, lengthInMinutes, genre);
 
     }
+
+    public void seeListOfMovies() {
+        for (Movie movie : movieCollection.movieList) {
+            System.out.println(movie.toString());
+        }
+    }
+
+    public void searchMovie(String searchTerm) {
+        movieCollection.searchMovie(searchTerm);
+    }
 }

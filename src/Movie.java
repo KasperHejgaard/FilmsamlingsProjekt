@@ -40,5 +40,17 @@ public class Movie {
         return genre;
     }
 
+    @Override
+    public String toString() {
+        String result = "";
+        result += title;
+        if (isInColor) {
+            result += "\n" + title + " er i farver.";
+        }else if (!isInColor) {
+            result += "\n" + title + " er ikke i farver";
+        }
+        return result;
+    }
+
 
 }
