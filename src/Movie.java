@@ -43,11 +43,12 @@ public class Movie {
     @Override
     public String toString() {
         String result = "";
-        result += title;
+        result += "Titel: " + title + "\n" + "Længde: " + lengthInMinutes + " Minutter " +
+                "\n" + "Director: " + director + "\n" + "Genre: " + genre + "\n" + "Farvefilm: ";
         if (isInColor) {
-            result += "\n" + title + " er i farver.";
-        }else if (!isInColor) {
-            result += "\n" + title + " er ikke i farver";
+            result += "Ja";
+        } else {
+            result += "Nej";
         }
         return result;
     }

@@ -13,13 +13,11 @@ public class Controller {
 
     }
 
-    public void seeListOfMovies() {
-        for (Movie movie : movieCollection.movieList) {
-            System.out.println(movie.toString());
-        }
+    public void seeMovieList() {
+        movieCollection.seeMovieList();
     }
 
-    public void searchMovie(String searchTerm) {
-        movieCollection.searchMovie(searchTerm);
+    public void searchMovie(String title) {
+        movieCollection.searchMovie(title);
     }
 }

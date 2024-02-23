@@ -6,6 +6,7 @@ public class Main {
 
         Controller nyliste = new Controller();
         int SENTINEL = 4;
+        String title;
 
         int opretEnFilm = 0;
         System.out.println("Velkommen til min filmsamling!");
@@ -15,11 +16,12 @@ public class Main {
             System.out.println("3. Søg efter film på listen");
             System.out.println("4. Afslut");
             opretEnFilm = input.nextInt();
+            input.nextLine();
             if (opretEnFilm == 1) {
                 input.nextLine();
                 //titel
                 System.out.println("Hvad er titlen på filem");
-                String title = input.nextLine();
+                title = input.nextLine();
 
                 //director
                 System.out.println("Hvem er director på filmen?");
@@ -42,6 +44,7 @@ public class Main {
                 //lengthInMinutes
                 System.out.println("Hvor lang er filmen i minutter?");
                 int lengthInMinutes = input.nextInt();
+                input.nextLine();
 
                 //Genre
                 System.out.println("Hvilken genre er filmen?");
@@ -51,17 +54,19 @@ public class Main {
 
                 // Movie[] movieList = nyliste.getMovieList();
                 System.out.println(title + " er blevet tilføjet til listen.");
-            } else if (opretEnFilm == 2) {
-                nyliste.seeListOfMovies();
-
-            } else if (opretEnFilm == 3) {
+            }
+            if (opretEnFilm == 2) {
+                nyliste.seeMovieList();
+            }
+            if (opretEnFilm == 3) {
                 System.out.println("Hvilken film vil du søge efter?");
-                String searchTerm = input.next();
-                nyliste.searchMovie(searchTerm);
+                title = input.nextLine();
+                nyliste.searchMovie(title);
 
-            } else{
-            System.out.println("Du har afsluttet programmet.");
+            }
+            if (opretEnFilm == 4) {
+                System.out.println("Du har afsluttet programmet.");
+            }
         }
     }
-}
 }

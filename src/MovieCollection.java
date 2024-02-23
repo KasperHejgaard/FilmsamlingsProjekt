@@ -17,12 +17,20 @@ public class MovieCollection {
         System.out.println(" "); */
     }
 
-    public void searchMovie(String searchTerm) {
-        for (int i = 0; i < movieList.size(); i++) {
-            if (searchTerm.equals(movieList.get(i).getTitle())) {
-                System.out.println("Titel " + movieList.get(i).getTitle());
-            }
+    public void seeMovieList() {
+        for (Movie moviePrintOut : movieList) {
+            System.out.println(moviePrintOut.toString());
+        }
+    }
 
+    public void searchMovie(String title) {
+        System.out.println("Følgende film passer til din søgning:");
+        for (Movie searchingMovie : movieList) {
+            if (searchingMovie.getTitle().toLowerCase().contains(title.toLowerCase())) {
+                System.out.println(searchingMovie.toString());
+            } else if (movieList.isEmpty()) {
+                System.out.println("Ingen film passer til din søgning");
+            }
         }
 
     }
