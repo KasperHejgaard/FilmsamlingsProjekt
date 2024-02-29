@@ -19,7 +19,6 @@ public class userInterface {
             opretEnFilm = input.nextInt();
             input.nextLine();
             if (opretEnFilm == 1) {
-                input.nextLine();
                 //titel
                 System.out.println("Hvad er titlen på filem");
                 title = input.nextLine();
